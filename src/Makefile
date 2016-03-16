@@ -523,7 +523,7 @@ CClink = $(CC)
 # When both GUI and X11 have been disabled this may save about 15% of the
 # code and make Vim startup quicker.
 #CONF_OPT_X = --without-x
-
+CONF_OPT_X = --without-x
 # X WINDOWS DIRECTORY - specify X directories
 # If configure can't find you X stuff, or if you have multiple X11 derivatives
 # installed, you may wish to specify which one to use.
@@ -531,13 +531,14 @@ CClink = $(CC)
 # This here selects openwin (as found on sun).
 #XROOT = /usr/openwin
 #CONF_OPT_X = --x-include=$(XROOT)/include --x-libraries=$(XROOT)/lib
-
+XROOT = /opt/X11
+CONF_OPT_X = --x-include=$(XROOT)/include --x-libraries=$(XROOT)/lib
 # X11 Session Management Protocol support
 # Vim will try to use XSMP to catch the user logging out if there are unsaved
 # files.  Uncomment this line to disable that (it prevents vim trying to open
 # communications with the session manager).
 #CONF_OPT_XSMP = --disable-xsmp
-
+CONF_OPT_XSMP = --disable-xsmp
 # You may wish to include xsmp but use exclude xsmp-interact if the logout
 # XSMP functionality does not work well with your session-manager (at time of
 # writing, this would be early GNOME-1 gnome-session: it 'freezes' other
@@ -545,7 +546,7 @@ CClink = $(CC)
 # *might* be the Vim code, but is more likely a bug in early GNOME-1.
 # This disables the dialog that asks you if you want to save files or not.
 #CONF_OPT_XSMP = --disable-xsmp-interact
-
+CONF_OPT_XSMP = --disable-xsmp-interact
 # COMPILER - Name of the compiler {{{1
 # The default from configure will mostly be fine, no need to change this, just
 # an example. If a compiler is defined here, configure will use it rather than
